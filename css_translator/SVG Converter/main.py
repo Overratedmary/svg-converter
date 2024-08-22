@@ -75,11 +75,16 @@ def button_listener(sFolder, sFile, dFile):
     global description
     global filePointer
     global folder
-
+    
     filename = filedialog.askopenfile(mode='r')  # returns <_io.TextIOWrapper name='{FILE_PATH}/{FILE_NAME}' mode='r' encoding='cp1252'>
     filePointer = open(filename.name, "r")  # filename.name is the file, 'r' for read
     sFolder.config(state='normal')
     sFile.config(state='normal')
+
+    #EDITTTTT
+    sFolder.delete("1.0", 'end') #delete the source folder and file text to empty the text boxes
+    sFile.delete("1.0", 'end')
+    
     sFolder.insert(tkinter.END, filePointer.name)
     folder = os.path.dirname(filePointer.name)
     sFile.insert(tkinter.END, os.path.basename(filePointer.name))
