@@ -81,9 +81,10 @@ def button_listener(sFolder, sFile, dFile):
     sFolder.config(state='normal')
     sFile.config(state='normal')
 
-    #EDITTTTT
-    sFolder.delete("1.0", 'end') #delete the source folder and file text to empty the text boxes
+    #Mary Roberts Edit 8/22/24
+    sFolder.delete("1.0", 'end') # delete the source folder and file text to empty the text boxes
     sFile.delete("1.0", 'end')
+    dFile.delete("1.0", 'end')
     
     sFolder.insert(tkinter.END, filePointer.name)
     folder = os.path.dirname(filePointer.name)
