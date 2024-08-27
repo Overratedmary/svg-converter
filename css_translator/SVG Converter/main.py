@@ -77,6 +77,8 @@ def button_listener(sFolder, sFile, dFile):
     global folder
     
     filename = filedialog.askopenfile(mode='r')  # returns <_io.TextIOWrapper name='{FILE_PATH}/{FILE_NAME}' mode='r' encoding='cp1252'>
+    print('filename.name = ', filename.name)
+    print("SVG File:\n", filename.read())
     filePointer = open(filename.name, "r")  # filename.name is the file, 'r' for read
     sFolder.config(state='normal')
     sFile.config(state='normal')
